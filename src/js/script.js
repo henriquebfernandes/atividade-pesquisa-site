@@ -1,5 +1,6 @@
 // ELEMENTOS DO DOM
 const grid_cartoes =  document.querySelector(".grid-cartoes");
+const formulario_pesquisa = document.querySelector("#formulario-pesquisa");
 const barra_de_pesquisa = document.querySelector("#barra-de-pesquisa");
 const botao_limpar_pesquisa = document.querySelector("#botao-limpar-pesquisa");
 
@@ -56,6 +57,14 @@ async function carregarProdutos() {
         window.close(); // Fecha a janela do navegador
     }
 }
+
+
+// EVENTOS
+formulario_pesquisa.addEventListener("submit", (event) => { 
+    // Previne o envio do formulário ao pressionar Enter
+    event.preventDefault();
+    document.activeElement.blur(); // Remove o foco do input para evitar que o teclado virtual apareça em dispositivos móveis
+});
 
 // FUNÇÃO PRINCIPAL
 async function main(){
