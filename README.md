@@ -13,7 +13,7 @@ O site está publicado no GitHub Pages e pode ser acessado em:
 ## Funcionalidades
 
 - Pesquisa em tempo real por nome, categoria ou modelo do produto, conforme o usuário digita.
-- Busca sem diferenciar maiúsculas de minúsculas ou acentos.
+- Busca sem diferenciar maiúsculas de minúsculas, acentos ou espaços extras no início, no fim e entre palavras.
 - Exibição de imagem, nome, preço, categoria e modelo em cada cartão.
 - Mensagem quando nenhum produto corresponde à pesquisa.
 - Botão para limpar a pesquisa.

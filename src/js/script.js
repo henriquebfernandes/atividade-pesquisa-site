@@ -7,7 +7,7 @@ const botao_limpar_pesquisa = document.querySelector("#botao-limpar-pesquisa");
 // FUNÇÕES AUXILIARES
 function formatarTexto(texto) {
      // Remove acentos e transforma o texto em minúsculo
-    return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+    return texto.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 }
 
 function filtrarProdutos(produtos, pesquisa) {
@@ -63,7 +63,8 @@ async function carregarProdutos() {
 formulario_pesquisa.addEventListener("submit", (event) => { 
     // Previne o envio do formulário ao pressionar Enter
     event.preventDefault();
-    document.activeElement.blur(); // Remove o foco do input para evitar que o teclado virtual apareça em dispositivos móveis
+    barra_de_pesquisa.value = formatarTexto(barra_de_pesquisa.value); // Formata o texto da pesquisa
+    barra_de_pesquisa.blur(); // Remove o foco do input para evitar que o teclado virtual apareça em dispositivos móveis
 });
 
 // FUNÇÃO PRINCIPAL
@@ -74,8 +75,7 @@ async function main(){
 
     barra_de_pesquisa.addEventListener("input", (event) => { // Filtra os produtos com base na pesquisa e exibe os resultados
         event.preventDefault();
-        const pesquisa = barra_de_pesquisa.value;
-        const produtosFiltrados = filtrarProdutos(produtos, pesquisa);
+        const produtosFiltrados = filtrarProdutos(produtos, barra_de_pesquisa.value);
         exibirProdutos(produtosFiltrados);
     });
 
@@ -83,7 +83,7 @@ async function main(){
         event.preventDefault();
         barra_de_pesquisa.value = "";
         exibirProdutos(produtos);
-    })
+    });
 }
 
 main(); //iniciar a aplicação
