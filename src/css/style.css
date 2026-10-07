@@ -81,16 +81,10 @@ footer {
 }
 
 #barra-de-pesquisa {
-    width: calc(100% - 150px);
+    width: calc(100% - 75px);
     height: 30px;
     padding: 5px;
     outline: none;
-}
-
-#botao-pesquisar {
-    height: 30px;
-    width: 75px;
-    cursor: pointer;
 }
 
 #botao-limpar-pesquisa {

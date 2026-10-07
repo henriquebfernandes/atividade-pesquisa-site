@@ -1,26 +1,39 @@
 # Pesquisa de Produtos
 
 Projeto de pesquisa e exibição de produtos desenvolvido com HTML, CSS e
-JavaScript.
+JavaScript. Os produtos são carregados de `data/produtos.json` e exibidos
+dinamicamente em cartões.
 
-A página monta os cartões de produtos dinamicamente a partir do arquivo
-`data/produtos.json`. Cada cartão apresenta a imagem, o nome, o preço, a
-categoria e o modelo do produto.
+## Acesso online
+
+O site está publicado no GitHub Pages e pode ser acessado em:
+
+<https://henriquebfernandes.github.io/atividade-pesquisa-site/>
+
+## Funcionalidades
+
+- Pesquisa em tempo real por nome, categoria ou modelo do produto, conforme o usuário digita.
+- Busca sem diferenciar maiúsculas de minúsculas ou acentos.
+- Exibição de imagem, nome, preço, categoria e modelo em cada cartão.
+- Mensagem quando nenhum produto corresponde à pesquisa.
+- Botão para limpar a pesquisa.
 
 ## Tecnologias
 
--   HTML5
--   CSS3
--   JavaScript
--   JSON para armazenar os dados dos produtos
+- HTML5
+- CSS3
+- JavaScript
+- JSON para armazenar os dados dos produtos
 
 ## Estrutura do projeto
 
-``` text
-atividade-pesquisa-html/
+```text
+atividade-pesquisa-site/
 ├── data/
 │   └── produtos.json       # Dados dos produtos e caminhos das imagens
 ├── src/
+│   ├── assets/
+│   │   └── images/         # Imagens dos produtos
 │   ├── css/
 │   │   └── style.css       # Estilos da página
 │   └── js/
@@ -29,48 +42,27 @@ atividade-pesquisa-html/
 └── README.md
 ```
 
-## Como executar corretamente
+## Como executar localmente
 
-**Não abra o `index.html` diretamente com um duplo clique (`file://`).**
-O JavaScript carrega os produtos usando `fetch("data/produtos.json")`, e
-o navegador pode bloquear essa requisição quando a página é aberta como
-arquivo local. Nesse caso, os produtos e cartões não serão carregados.
+O site carrega os produtos com `fetch("data/produtos.json")`. Por isso,
+abra-o por um servidor HTTP, e não diretamente pelo endereço `file://`.
 
-### Opção recomendada: Visual Studio Code + Live Server
+### Visual Studio Code com Live Server
 
-1.  Baixe o projeto ou clone o repositório.
-2.  Abra a pasta inteira do projeto no Visual Studio Code.
-3.  Instale a extensão **Live Server**, caso ainda não esteja instalada.
-4.  Clique com o botão direito no `index.html` e selecione **Open with
-    Live Server**.
-5.  A página será aberta em um endereço local HTTP. Use esse endereço
-    para testar a pesquisa.
+1. Clone ou baixe o projeto e abra a pasta no Visual Studio Code.
+2. Instale a extensão **Live Server**, caso ainda não esteja instalada.
+3. Clique com o botão direito em `index.html` e escolha **Open with Live Server**.
 
-É importante iniciar o servidor na pasta raiz do projeto, para que o
-caminho `data/produtos.json` seja encontrado.
+Inicie o servidor na pasta raiz do projeto para que o caminho
+`data/produtos.json` seja encontrado.
 
 ## Dados e imagens
 
--   Os dados dos produtos ficam em `data/produtos.json`.
--   O arquivo `src/js/script.js` lê esse JSON e cria os cartões na
-    página.
--   O caminho de cada imagem é informado no campo `imagem` de cada
-    produto no JSON.
-
-Para que as imagens apareçam, mantenha os arquivos de imagem nos
-caminhos indicados no JSON. Se uma imagem não carregar, confira se o
-caminho e o nome do arquivo estão corretos, incluindo
-maiúsculas/minúsculas e extensão.
-
-## Funcionalidades
-
--   Pesquisa de produtos por nome, categoria ou modelo.
--   Pesquisa sem diferenciar maiúsculas de minúsculas e com normalização
-    de acentos.
--   Exibição dinâmica dos produtos em cartões.
--   Mensagem quando nenhum produto corresponde à pesquisa.
--   Botão para limpar a pesquisa.
+Os dados ficam em `data/produtos.json`. O campo `imagem` de cada produto
+indica o caminho da imagem correspondente dentro do projeto. Ao adicionar
+produtos ou imagens, mantenha esses caminhos e nomes de arquivo corretos,
+incluindo maiúsculas, minúsculas e extensão.
 
 ## Repositório
 
-https://github.com/henri108100/atividade-pesquisa-html
+<https://github.com/henriquebfernandes/atividade-pesquisa-site>
